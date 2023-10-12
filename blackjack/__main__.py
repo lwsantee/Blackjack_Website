@@ -1,5 +1,5 @@
-from models.Card import Card
-from models.Player import Player
+from .models.Card import Card
+from .models.Player import Player
 
 # Create a sample player
 player1 = Player(name="Alice")
