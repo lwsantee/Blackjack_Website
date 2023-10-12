@@ -1,5 +1,5 @@
-app/models/__pycache__/*
-app/views/__pycache__/*
-app/controllers/__pycache__/*
-app/__pycache__/*
+blackjack/models/__pycache__/*
+blackjack/views/__pycache__/*
+blackjack/controllers/__pycache__/*
+blackjack/__pycache__/*
 .virtual/
