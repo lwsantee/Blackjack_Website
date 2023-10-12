@@ -1,7 +1,8 @@
-import models.Player
+from app.models.Card import Card
+from app.models.Player import Player
 
 # Create a sample player
-player1 = models.Player.Player(name="Alice")
+player1 = Player(name="Alice")
 
 # Add cards to the player's hand
 card1 = Card(suit="Hearts", rank="8")
