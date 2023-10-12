@@ -1,5 +1,5 @@
-from model.Card import Card
-from model.Player import Player
+from Blackjack_Website.model.Card import Card
+from Blackjack_Website.model.Player import Player
 
 # Create a sample player
 player1 = Player(name="Alice")
