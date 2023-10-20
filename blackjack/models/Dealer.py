@@ -1,16 +1,14 @@
 class Player:
 
-    def __init__(self, name, balance):
-        self.name = name
+    def __init__(self):
         self.hand = []
-        self.balance = balance
 
     def add_card_to_hand(self, card):
-        """Add a card to the player's hand"""
+        """Add a card to the dealer's hand"""
         self.hand.append(card)
 
     def calculate_hand_value(self):
-        """Calculate the total value of the player's hand"""
+        """Calculate the total value of the dealer's hand"""
         hand_value = sum(card.value for card in self.hand)
         num_aces = sum(1 for card in self.hand if card.rank == 'A')
 
@@ -23,9 +21,5 @@ class Player:
         return hand_value
 
     def clear_hand(self):
-        """Clear the player's hand"""
+        """Clear the dealers's hand"""
         self.hand = []
-
-    def __str__(self):
-        """String representation of the player"""
-        return f"Player {self.name}"

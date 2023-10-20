@@ -3,6 +3,7 @@ import time
 from models.Player1 import Player
 from models.Card1 import Card
 
+
 class Blackjack:
 
     def __init__(self):
@@ -50,7 +51,7 @@ class Blackjack:
         if dealerHandTotal > 21 and hasAce:
             dealerHandTotal -= 10
         return dealerHandTotal
-    
+
     def isPlayerHandBust(self, player):
         if self.getPlayerHandTotal(player) > 21:
             return True
@@ -88,7 +89,7 @@ class Blackjack:
         for player in self.playerList:
             self.dealPlayerCard(player)
         self.dealDealerCard()
-        
+
     def printPartialDealerHand(self):
         print("Dealer: [", end=" ")
         self.dealerHand[0].printCard()
@@ -129,17 +130,21 @@ class Blackjack:
         print("]")
 
     def printAllMoney(self):
-        print(self.playerList[0].name, " ($", self.playerList[0].money, ")", sep="", end="")
+        print(self.playerList[0].name, " ($",
+              self.playerList[0].money, ")", sep="", end="")
         for value in range(1, len(self.playerList)):
             print(", ", end="")
-            print(self.playerList[value].name, " ($", self.playerList[value].money, ")", sep="", end="")
+            print(self.playerList[value].name, " ($",
+                  self.playerList[value].money, ")", sep="", end="")
         print()
 
     def printAllBets(self):
-        print(self.playerList[0].name, " ($", self.playerList[0].money, "): $", self.playerList[0].bet, sep="", end="")
+        print(self.playerList[0].name, " ($", self.playerList[0].money,
+              "): $", self.playerList[0].bet, sep="", end="")
         for value in range(1, len(self.playerList)):
             print(", ", end="")
-            print(self.playerList[value].name, " ($", self.playerList[value].money, "): $", self.playerList[value].bet, sep="")
+            print(self.playerList[value].name, " ($", self.playerList[value].money,
+                  "): $", self.playerList[value].bet, sep="")
         print()
 
     def printAllHands(self):
@@ -172,7 +177,7 @@ class Blackjack:
         playerCount = int(playerCount)
         for value in range(1, playerCount + 1):
             print("Player", value, end=" ")
-            playerName = input ("please enter your name: ")
+            playerName = input("please enter your name: ")
             playerMoney = input("How much money do you want to start with? ")
             playerMoney = int(playerMoney)
             newPlayer = Player(playerName, playerMoney)
@@ -227,7 +232,8 @@ class Blackjack:
                 for player in self.playerList:
                     if not self.isPlayerHandBust(player):
                         if self.isPlayerHand21(player) and len(player.hand) == 2:
-                            print(player.name + " has blackjack which pays 3 to 2!")
+                            print(player.name +
+                                  " has blackjack which pays 3 to 2!")
                             player.addMoney((player.bet * 1.5))
                         else:
                             print(player.name + " won!")
@@ -243,7 +249,8 @@ class Blackjack:
                             player.bet = 0
                     elif not self.isPlayerHandBust(player):
                         if self.isPlayerHand21(player) and len(player.hand) == 2:
-                            print(player.name + " has blackjack which pays 3 to 2!")
+                            print(player.name +
+                                  " has blackjack which pays 3 to 2!")
                             player.addMoney((player.bet * 1.5))
                         else:
                             if self.getPlayerHandTotal(player) > self.getDealerHandTotal():
@@ -263,6 +270,7 @@ class Blackjack:
             self.resetDeck()
         time.sleep(2)
         print("No players at the table! Exiting...")
+
 
 game = Blackjack()
 game.runGame()
