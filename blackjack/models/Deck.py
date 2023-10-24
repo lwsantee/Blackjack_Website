@@ -9,7 +9,7 @@ class Deck:
         self.shuffle_deck()
 
     def fill_deck(self):
-        """Fills the deck with a default configuration of cards"""
+        """fills the deck with a default configuration of cards"""
         new_deck = []
         for suit in ["S", "D"]:
             for value in range(1, 14):
@@ -20,7 +20,7 @@ class Deck:
         return new_deck
 
     def make_new_card(suit, value):
-        """Helper function for fill_deck to make the cards"""
+        """helper function for fill_deck to make the cards"""
         if value == 1:
             new_card = Card(suit, "A")
         elif value == 11:
@@ -34,19 +34,20 @@ class Deck:
         return new_card
 
     def shuffle_deck(self):
-        """Shuffles the deck"""
+        """shuffles the deck"""
         random.shuffle(self.deck)
 
     def reset_deck(self):
-        """Resets the current deck"""
+        """resets the current deck"""
         self.deck.clear()
         self.__init__()
 
     def pop_card(self):
-        """Pops the top card from the deck"""
+        """pops the top card from the deck"""
         return self.deck.pop(0)
 
     def __str__(self):
-        """String representation of the deck"""
-        for card in self.deck:
-            print(card.__str__())
+        """string representation of the deck"""
+        deck_str = ", ".join(
+            f"{card.__str__()}" for card in self.deck)
+        return f"[{deck_str}]"
