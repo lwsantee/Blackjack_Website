@@ -16,7 +16,11 @@
     <div id="modal" class="modal">
         <div class="modal-content">
             <!-- Title and form for user information -->
-            <h2>Welcome to the Blackjack Game</h2>
+            <div class="modal-header">
+                <img src="../static/images/suits-left.png">
+                <h1>Welcome to the Blackjack Table!</h1>
+                <img src="../static/images/suits-right.png">
+            </div>
             <form id="userInfoForm">
                 <label for="playerName">Player Name:</label>
                 <input type="text" id="playerName" required>
@@ -72,7 +76,8 @@
         </div>
     </div>
 
-    <script type="module" src="/static/dist/scripts/index.bundle.js">
+    <script type="module" src="/static/dist/scripts/index.bundle.js"></script>
+    <script>
         // Get references to the modal and game container
         var modal = document.getElementById('modal');
         var game = document.getElementById('game');
