@@ -25,11 +25,25 @@ body {
 
 /* Styling for the content inside the modal */
 .modal-content {
+    text-align: center;
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    border-radius: 8px;
+    width: 35%;
+}
+
+.modal-header {
+    margin: 0 0 15px;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    margin: auto;
+    width: 10%;
+    height: 10%;
 }
 
 /* Styling for the close button in the modal */
