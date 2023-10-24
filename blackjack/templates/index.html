@@ -2,17 +2,134 @@
 <html lang="en">
 
 <head>
+    <!-- Set the character set and viewport for the document -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set the title of the page -->
     <title>Blackjack Game</title>
+    <!-- Link to an external stylesheet for styling -->
     <link rel="stylesheet" href="../static/style/game.css">
 </head>
 
 <body>
-    <div class="game-container">
-        <div class="table-container">
+    <!-- Modal for user input -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <!-- Title and form for user information -->
+            <h2>Welcome to the Blackjack Game</h2>
+            <form id="userInfoForm">
+                <label for="playerName">Player Name:</label>
+                <input type="text" id="playerName" required>
+                <label for="playerBalance">Account Balance:</label>
+                <input type="number" id="playerBalance" required>
+                <!-- Button to submit the form -->
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
         </div>
     </div>
+
+    <!-- Main game container -->
+    <div id="game" class="game-container">
+        <div class="table-container">
+            <!-- Player information and join button for player 1 to player 6 -->
+            <div class="player-info player-info-empty player-1-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
+            </div>
+            <div class="player-info player-info-empty player-2-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
+            </div>
+            <div class="player-info player-info-empty player-3-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
+            </div>
+            <div class="player-info player-info-empty player-4-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
+            </div>
+            <div class="player-info player-info-empty player-5-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
+            </div>
+            <div class="player-info player-info-empty player-6-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
+            </div>
+
+            <!-- Player bet containers for player 1 to player 6 -->
+            <div class="player-bet player-1-bet"></div>
+            <div class="player-bet player-2-bet"></div>
+            <div class="player-bet player-3-bet"></div>
+            <div class="player-bet player-4-bet"></div>
+            <div class="player-bet player-5-bet"></div>
+            <div class="player-bet player-6-bet"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript section for handling modal, form submission, and player joining -->
+    <script>
+        // Get references to the modal and game container
+        var modal = document.getElementById('modal');
+        var game = document.getElementById('game');
+
+        // When the page loads, display the modal and adjust game opacity
+        window.onload = function () {
+            modal.style.display = 'block';
+            game.style.opacity = '0.2';
+        };
+
+        // Function to close the modal and make the main content visible
+        function closeModal() {
+            modal.style.display = 'none';
+            game.style.opacity = '1';
+        }
+
+        // Function to handle form submission
+        function submitForm() {
+            // Get player name and balance from the form
+            var playerNameInput = document.getElementById('playerName');
+            var playerBalanceInput = document.getElementById('playerBalance');
+            // Validate the inputs
+            var playerName = playerNameInput.value.trim();
+            var playerBalance = parseFloat(playerBalanceInput.value);
+            if (playerName === '' || isNaN(playerBalance) || playerBalance <= 0) {
+                // Display an error message or take appropriate action for invalid inputs
+                alert('Please enter valid information.');
+                return;
+            }
+            // Close the modal if inputs are valid
+            closeModal();
+            // Log player information to the console
+            console.log('Name:', playerName);
+            console.log('Balance:', playerBalance);
+        }
+
+        // Function to handle player joining
+        function joinPlayer(event) {
+            // Get the button and its parent (player-info) element
+            var button = event.currentTarget;
+            var playerInfo = button.parentElement;
+
+            // Remove the 'player-info-empty' class and populate player-info with HTML
+            playerInfo.classList.remove('player-info-empty');
+            playerInfo.innerHTML = `
+            <div class="player-info-row">
+                <h2>${playerName.value}</h2>
+                <h2>${playerBalance.value}</h2>
+            </div>
+            <div class="player-cards">
+            </div>
+            `;
+        }
+    </script>
+
 </body>
 
 </html>

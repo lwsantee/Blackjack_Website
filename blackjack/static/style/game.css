@@ -1,3 +1,4 @@
+/* Resetting default margin and padding on the body, centering content */
 body {
     margin: 0;
     padding: 0;
@@ -9,6 +10,45 @@ body {
     background-repeat: repeat;
 }
 
+/* Styling for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Styling for the content inside the modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+/* Styling for the close button in the modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Hover and focus styles for the close button */
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styling for the main game container */
 .game-container {
     text-align: center;
     height: 100%;
@@ -19,10 +59,162 @@ body {
     box-shadow: 20px 0 35px rgba(0, 0, 0, 0.2), -20px 0 35px rgba(0, 0, 0, 0.2);
 }
 
+/* Styling for the table container inside the game */
 .table-container {
     height: 84%;
-    width: 100%;
     background-image: url('../images/table.png');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* Styling for player information */
+.player-info {
+    width: 300px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: rgba(90, 90, 90, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for empty player information */
+.player-info-empty {
+    background: none;
+    border: grey dashed 2px;
+}
+
+/* Styling for rows inside player information */
+.player-info-row {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+/* Styling for player bet display */
+.player-bet {
+    width: 50px;
+    height: 50px;
+    border: white solid 3px;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white
+}
+
+/* Styling for player cards */
+.player-cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Styling for individual cards */
+.card {
+    width: 50px;
+    height: 80px;
+    margin: 0 5px 10px 5px;
+    background-color: white;
+    box-shadow: 20px 0 35px rgba(0, 0, 0, 0.2), -20px 0 35px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+/* Styling for heading 2 elements */
+h2 {
+    margin: 0;
+    color: lightgray;
+}
+
+/* Styling for the join button */
+.join-button {
+    margin-top: 18%;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styling for player information positions */
+.player-1-info {
+    position: absolute;
+    top: 30%;
+    left: 6%;
+}
+
+.player-2-info {
+    position: absolute;
+    top: 60%;
+    left: 12%
+}
+
+.player-3-info {
+    position: absolute;
+    top: 68%;
+    left: 31.5%
+}
+
+.player-4-info {
+    position: absolute;
+    top: 68%;
+    right: 31.5%
+}
+
+.player-5-info {
+    position: absolute;
+    top: 60%;
+    right: 12%
+}
+
+.player-6-info {
+    position: absolute;
+    top: 30%;
+    right: 6%;
+}
+
+/* Styling for player bet positions */
+.player-1-bet {
+    position: absolute;
+    top: 38%;
+    left: 25%;
+}
+
+.player-2-bet {
+    position: absolute;
+    top: 51%;
+    left: 32%;
+}
+
+.player-3-bet {
+    position: absolute;
+    top: 57%;
+    left: 43%;
+}
+
+.player-4-bet {
+    position: absolute;
+    top: 57%;
+    right: 43%;
+}
+
+.player-5-bet {
+    position: absolute;
+    top: 51%;
+    right: 32%;
+}
+
+.player-6-bet {
+    position: absolute;
+    top: 38%;
+    right: 25%;
 }
