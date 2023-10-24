@@ -3,5 +3,4 @@ blackjack/controllers/__pycache__/*
 blackjack/models/__pycache__/*
 blackjack/views/__pycache__/*
 blackjack/static/node_modules/
-blackjack/static/dist/scripts/
 .virtual/
