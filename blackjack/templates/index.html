@@ -27,98 +27,97 @@
             </form>
         </div>
     </div>
-    <<<<<<< HEAD <!-- Main game container -->
-        <div id="game" class="game-container">
-            <div class="table-container">
-                <!-- Player information and join button for player 1 to player 6 -->
-                <div class="player-info player-info-empty player-1-info" id="player1Info">
-                    <button class="join-button" onclick="joinPlayer(event)">
-                        <h2>SIT</h2>
-                    </button>
-                </div>
-                <div class="player-info player-info-empty player-2-info" id="player1Info">
-                    <button class="join-button" onclick="joinPlayer(event)">
-                        <h2>SIT</h2>
-                    </button>
-                </div>
-                <div class="player-info player-info-empty player-3-info" id="player1Info">
-                    <button class="join-button" onclick="joinPlayer(event)">
-                        <h2>SIT</h2>
-                    </button>
-                </div>
-                <div class="player-info player-info-empty player-4-info" id="player1Info">
-                    <button class="join-button" onclick="joinPlayer(event)">
-                        <h2>SIT</h2>
-                    </button>
-                </div>
-                <div class="player-info player-info-empty player-5-info" id="player1Info">
-                    <button class="join-button" onclick="joinPlayer(event)">
-                        <h2>SIT</h2>
-                    </button>
-                </div>
-                <div class="player-info player-info-empty player-6-info" id="player1Info">
-                    <button class="join-button" onclick="joinPlayer(event)">
-                        <h2>SIT</h2>
-                    </button>
-                </div>
-
-                <!-- Player bet containers for player 1 to player 6 -->
-                <div class="player-bet player-1-bet"></div>
-                <div class="player-bet player-2-bet"></div>
-                <div class="player-bet player-3-bet"></div>
-                <div class="player-bet player-4-bet"></div>
-                <div class="player-bet player-5-bet"></div>
-                <div class="player-bet player-6-bet"></div>
+    <!-- Main game container -->
+    <div id="game" class="game-container">
+        <div class="table-container">
+            <!-- Player information and join button for player 1 to player 6 -->
+            <div class="player-info player-info-empty player-1-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
             </div>
+            <div class="player-info player-info-empty player-2-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
+            </div>
+            <div class="player-info player-info-empty player-3-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
+            </div>
+            <div class="player-info player-info-empty player-4-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
+            </div>
+            <div class="player-info player-info-empty player-5-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
+            </div>
+            <div class="player-info player-info-empty player-6-info" id="player1Info">
+                <button class="join-button" onclick="joinPlayer(event)">
+                    <h2>SIT</h2>
+                </button>
+            </div>
+
+            <!-- Player bet containers for player 1 to player 6 -->
+            <div class="player-bet player-1-bet"></div>
+            <div class="player-bet player-2-bet"></div>
+            <div class="player-bet player-3-bet"></div>
+            <div class="player-bet player-4-bet"></div>
+            <div class="player-bet player-5-bet"></div>
+            <div class="player-bet player-6-bet"></div>
         </div>
+    </div>
 
-        <!-- JavaScript section for handling modal, form submission, and player joining -->
-        <script type="module" src="/static/dist/scripts/index.bundle.js">
-            // Get references to the modal and game container
-            var modal = document.getElementById('modal');
-            var game = document.getElementById('game');
+    <script type="module" src="/static/dist/scripts/index.bundle.js">
+        // Get references to the modal and game container
+        var modal = document.getElementById('modal');
+        var game = document.getElementById('game');
 
-            // When the page loads, display the modal and adjust game opacity
-            window.onload = function () {
-                modal.style.display = 'block';
-                game.style.opacity = '0.2';
-            };
+        // When the page loads, display the modal and adjust game opacity
+        window.onload = function () {
+            modal.style.display = 'block';
+            game.style.opacity = '0.2';
+        };
 
-            // Function to close the modal and make the main content visible
-            function closeModal() {
-                modal.style.display = 'none';
-                game.style.opacity = '1';
+        // Function to close the modal and make the main content visible
+        function closeModal() {
+            modal.style.display = 'none';
+            game.style.opacity = '1';
+        }
+
+        // Function to handle form submission
+        function submitForm() {
+            // Get player name and balance from the form
+            var playerNameInput = document.getElementById('playerName');
+            var playerBalanceInput = document.getElementById('playerBalance');
+            // Validate the inputs
+            var playerName = playerNameInput.value.trim();
+            var playerBalance = parseFloat(playerBalanceInput.value);
+            if (playerName === '' || isNaN(playerBalance) || playerBalance <= 0) {
+                // Display an error message or take appropriate action for invalid inputs
+                alert('Please enter valid information.');
+                return;
             }
+            // Close the modal if inputs are valid
+            closeModal();
+            // Log player information to the console
+            console.log('Name:', playerName);
+            console.log('Balance:', playerBalance);
+        }
 
-            // Function to handle form submission
-            function submitForm() {
-                // Get player name and balance from the form
-                var playerNameInput = document.getElementById('playerName');
-                var playerBalanceInput = document.getElementById('playerBalance');
-                // Validate the inputs
-                var playerName = playerNameInput.value.trim();
-                var playerBalance = parseFloat(playerBalanceInput.value);
-                if (playerName === '' || isNaN(playerBalance) || playerBalance <= 0) {
-                    // Display an error message or take appropriate action for invalid inputs
-                    alert('Please enter valid information.');
-                    return;
-                }
-                // Close the modal if inputs are valid
-                closeModal();
-                // Log player information to the console
-                console.log('Name:', playerName);
-                console.log('Balance:', playerBalance);
-            }
+        // Function to handle player joining
+        function joinPlayer(event) {
+            // Get the button and its parent (player-info) element
+            var button = event.currentTarget;
+            var playerInfo = button.parentElement;
 
-            // Function to handle player joining
-            function joinPlayer(event) {
-                // Get the button and its parent (player-info) element
-                var button = event.currentTarget;
-                var playerInfo = button.parentElement;
-
-                // Remove the 'player-info-empty' class and populate player-info with HTML
-                playerInfo.classList.remove('player-info-empty');
-                playerInfo.innerHTML = `
+            // Remove the 'player-info-empty' class and populate player-info with HTML
+            playerInfo.classList.remove('player-info-empty');
+            playerInfo.innerHTML = `
             <div class="player-info-row">
                 <h2>${playerName.value}</h2>
                 <h2>${playerBalance.value}</h2>
@@ -126,12 +125,9 @@
             <div class="player-cards">
             </div>
             `;
-            }
-        </script>
+        }
+    </script>
 
-        =======
-        <script type="module" src="/static/dist/scripts/index.bundle.js"></script>
-        >>>>>>> 995696af37c0bdbd9273fbc840d82f6f2d57f9b0
 </body>
 
 </html>
