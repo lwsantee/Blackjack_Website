@@ -13,6 +13,15 @@ class Player:
         self.bet = 0
         self.seat = seat
 
+    def to_json(self):
+        return {
+            "name": self.name,
+            "hand": self.hand,
+            "balance": self.balance,
+            "bet": self.bet,
+            "seat": self.seat,
+        }
+
     def add_card_to_hand(self, card):
         """add a card to the player's hand"""
         self.hand.append(card)
