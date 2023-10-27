@@ -1,13 +1,17 @@
-from models.Card import Card
+from typing import Dict, List, Self
+from blackjack.models.Card import Card
 
 
 class Player:
 
-    def __init__(self, name, balance):
+    active_players: Dict[str, Self] = {}
+
+    def __init__(self, name: str, balance: float, seat: int):
         self.name = name
         self.hand = []
         self.balance = balance
         self.bet = 0
+        self.seat = seat
 
     def add_card_to_hand(self, card):
         """add a card to the player's hand"""
