@@ -1,5 +1,4 @@
 class Dealer:
-
     def __init__(self):
         self.hand = []
 
@@ -10,7 +9,7 @@ class Dealer:
     def calculate_hand_value(self):
         """calculate the total value of the dealer's hand"""
         hand_value = sum(card.value for card in self.hand)
-        num_aces = sum(1 for card in self.hand if card.rank == 'A')
+        num_aces = sum(1 for card in self.hand if card.rank == "A")
         # adjust for aces if the total value is greater than 21
         while num_aces > 0 and hand_value > 21:
             # convert ace from 11 to 1

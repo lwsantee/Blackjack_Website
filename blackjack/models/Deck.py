@@ -3,7 +3,6 @@ from models.Card import Card
 
 
 class Deck:
-
     def __init__(self):
         self.deck = self.fill_deck()
         self.shuffle_deck()
@@ -48,6 +47,5 @@ class Deck:
 
     def __str__(self):
         """string representation of the deck"""
-        deck_str = ", ".join(
-            f"{card.__str__()}" for card in self.deck)
+        deck_str = ", ".join(f"{card.__str__()}" for card in self.deck)
         return f"[{deck_str}]"
