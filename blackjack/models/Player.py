@@ -22,6 +22,14 @@ class Player:
             "seat": self.seat,
         }
 
+    @classmethod
+    def get_active_players_json(cls):
+        active_players_json = {}
+        for name in cls.active_players:
+            active_players_json[name] = cls.active_players[name].to_json()
+
+        return active_players_json
+
     def add_card_to_hand(self, card):
         """add a card to the player's hand"""
         self.hand.append(card)
