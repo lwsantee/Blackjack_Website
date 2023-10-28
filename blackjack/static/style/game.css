@@ -134,12 +134,30 @@ img {
 
 /* Styling for individual cards */
 .card {
+    position: relative;
     width: 50px;
     height: 80px;
     margin: 0 5px 10px 5px;
     background-color: white;
     box-shadow: 20px 0 35px rgba(0, 0, 0, 0.2), -20px 0 35px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Pseudo-elements for card value and suit */
+.card::before {
+    content: attr(data-value);
+}
+
+.card::after {
+    content: attr(data-suit);
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }
 
 /* Styling for heading 2 elements */
