@@ -30,6 +30,9 @@ def handle_player_join():
     if new_player is None:
         return Response("Player name is already in use", http.HTTPStatus.CONFLICT)
 
+    socketio.emit("display-other-players",
+                  {new_player.name: new_player.to_json()})
+
     return {
         "active_players": Player.get_active_players_json(),
     }

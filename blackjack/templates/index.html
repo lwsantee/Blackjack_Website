@@ -36,11 +36,10 @@
     <div class="table-container">
       <!-- Player information and join button for player 1 to player 6 -->
       {% for i in range(1, 7) %}
-      <div class="player-info player-info-empty player-{{ i }}-info"
-        id="player{{ i }}Info">
-        <button class="join-button">
+      <div class="player-info player-info-empty player-{{ i }}-info" id="player{{ i }}Info">
+        <div class="join-button">
           <h2>SIT</h2>
-        </button>
+        </div>
       </div>
       <!-- Player bet containers for player 1 to player 6 -->
       <div class="player-bet player-{{ i }}-bet"></div>
@@ -50,8 +49,6 @@
   </div>
 
   <script type="module" src="/static/scripts/index.js"></script>
-  <script>
-  </script>
 
 </body>
 
