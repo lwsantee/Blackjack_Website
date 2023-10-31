@@ -6,9 +6,8 @@ import "https://unpkg.com/socket.io-client@4.7.2/dist/socket.io.min.js";
  *
  * @param {HTMLDivElement} modal - The modal element to display on page load
  * @param {HTMLDivElement} game - The game background to make transparent
- * @param {Socket} socket - The web socket connection
  */
-async function initLoginModal(modal, game, socket) {
+async function initLoginModal(modal, game) {
   // Display the modal and adjust game opacity
   modal.style.display = "block";
   game.style.opacity = "0.2";
@@ -26,7 +25,7 @@ async function initLoginModal(modal, game, socket) {
   const submitPlayerForm = document.getElementById("userInfoForm");
   submitPlayerForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    submitForm(modal, game, socket);
+    submitForm(modal, game);
   });
 }
 
@@ -46,9 +45,8 @@ function closeModal(modal, game) {
  *
  * @param {HTMLDivElement} modal - The modal element to close
  * @param {HTMLDivElement} game - The game background to make visible
- * @param {Socket} socket - The web socket connection
  */
-async function submitForm(modal, game, socket) {
+async function submitForm(modal, game) {
   // Get player name and balance from the form
   const playerNameInput = document.getElementById("playerName");
   const playerBalanceInput = document.getElementById("playerBalance");
@@ -171,5 +169,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const game = document.getElementById("game");
 
   // Initialize the login modal
-  initLoginModal(modal, game, socket);
+  initLoginModal(modal, game);
 });
